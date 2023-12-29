@@ -1,0 +1,13 @@
+node {
+    stage('clone') {
+        git 'https://github.com/Sembala/jenkins-helloworld.git'
+    }
+    stage('Build') {
+        sh label: '', script: 'javac Main.java'
+    }
+    stage('RUN') {
+        sh label: '' , script: 'java Main'
+    
+    }
+
+}
