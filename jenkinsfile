@@ -6,11 +6,11 @@ node{
     }
 
     stage('Build image') {
-        app = docker.build("Sembala/nginx")
+        app = docker.build("sembala/nginx")
     }
 
     stage('Test image') {
-        docker.image('Sembala/nginx').withRun('-p 80:80') { c ->
+        docker.image('sembala/nginx').withRun('-p 80:80') { c ->
         sh 'docker ps'
         sh 'curl localhost'
 	     }
