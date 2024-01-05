@@ -1,13 +1,17 @@
-node {
-    stage('clone') {
-        git 'https://github.com/Sembala/jenkins-helloworld.git'
-    }
-    stage('Build') {
-        sh label: '', script: 'javac Main.java'
-    }
-    stage('RUN') {
-        sh label: '' , script: 'java Main'
-    
-    }
+node
+def app
+stage ("Clone")
+checkout scm
+}
 
+stage( "Build image") ?
+app - docker.build("kavki/ngins’’)
+}
+
+stage ('Test image") {
+docker.image (‘xavki/nginx’) .withRun(‘ -p 80:80') { c  ->
+sh "docker ps 
+sh curl localhost
+   }
+ }
 }
